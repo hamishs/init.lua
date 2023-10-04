@@ -74,5 +74,12 @@ return require('packer').startup(function(use)
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
 
+  -- rust tools
+  use 'neovim/nvim-lspconfig'
+  use 'simrat39/rust-tools.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'mfussenegger/nvim-dap'
+
+
 end)
 
