@@ -4,7 +4,20 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
+  'pylsp',
 })
+
+local lspconfig = require('lspconfig')
+lspconfig.pylsp.setup({
+    settings = {
+        pylsp = {
+            plugins = {
+                flake8 = {enabled = true},
+            }
+        }
+    }
+})
+
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
