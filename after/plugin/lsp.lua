@@ -7,16 +7,24 @@ lsp.ensure_installed({
   'pylsp',
 })
 
-local lspconfig = require('lspconfig')
-lspconfig.pylsp.setup({
+
+lsp.configure('pylsp', {
     settings = {
         pylsp = {
             plugins = {
-                flake8 = {enabled = true},
+                flake8 = {
+                    enabled = true,
+                    maxLineLength = 86,
+                    ignore = { "W391" },
+                },
+                pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
             }
         }
     }
 })
+
+
 
 
 -- Fix Undefined global 'vim'
@@ -69,4 +77,5 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
 
