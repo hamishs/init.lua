@@ -14,7 +14,7 @@ lsp.configure('pylsp', {
             plugins = {
                 flake8 = {
                     enabled = true,
-                    maxLineLength = 86,
+                    maxLineLength = 88,
                     ignore = { "W391" },
                 },
                 pycodestyle = { enabled = false },
