@@ -6,3 +6,12 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
+require('telescope').setup{
+    defaults = {
+        file_ignore_patterns = {
+            "./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*",
+            "./target/*", "target", "^target/*", "target/*",
+            "./venv/*", "venv", "^venv/*", "venv/*"
+        }
+    }
+}
